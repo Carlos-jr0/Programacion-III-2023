@@ -128,6 +128,8 @@ public class Jframe extends JFrame {
 		btnBoton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				JTextArea textArea = new JTextArea();
+				textArea.setText("Null, Null, Null");
 				
 			}
 		});
@@ -144,15 +146,20 @@ public class Jframe extends JFrame {
 				Nodo root = construct(expresion);
 				preOrden(root);
 				
-				
-				//double resultado=evaluarExpresion(expresion);
-				//txtImprimir.seText(resultado);
+				String exp=txtImprimirInorden.getText();
+				txtImprimirPreorden.setText(exp);
 			}
 		});
 		btnPreorden.setBounds(10, 120, 96, 23);
 		contentPane.add(btnPreorden);
 		
 		JButton btnPostorden = new JButton("Postorden");
+		btnPostorden.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String exp=txtImprimirInorden.getText();
+				txtImprimirPostorden.setText(exp);
+			}
+		});
 		btnPostorden.setBounds(10, 88, 96, 23);
 		contentPane.add(btnPostorden);
 		
